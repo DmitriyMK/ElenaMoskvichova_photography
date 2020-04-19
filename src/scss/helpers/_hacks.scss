@@ -1,0 +1,23 @@
+// titles for semantics and structure HTML
+.offscreen {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	border: 0;
+}
+
+/* ONLY FOR IE11 */
+@media all and (-ms-high-contrast: none) {
+}
+
+/* ONLY FOR EDGE */
+@supports (-ms-ime-align: auto) {
+}
+
+/* ONLY FOR Firefox */
+@supports (-moz-appearance: none) {
+}
