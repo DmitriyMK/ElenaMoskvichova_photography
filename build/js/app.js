@@ -90,22 +90,10 @@
 /*!****************!*\
   !*** ./app.js ***!
   \****************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib_sayHello_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/sayHello.js */ \"./lib/sayHello.js\");\n/* harmony import */ var _lib_sayHello_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_lib_sayHello_js__WEBPACK_IMPORTED_MODULE_0__);\n\n_lib_sayHello_js__WEBPACK_IMPORTED_MODULE_0___default()();\nalert('a');\n\nfunction asd() {}\n\nif (false) {}\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hcHAuanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hcHAuanM/OWE3OCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgc2F5SGVsbG8gZnJvbSAnLi9saWIvc2F5SGVsbG8uanMnO1xyXG5cclxuc2F5SGVsbG8oKTtcclxuXHJcbmFsZXJ0KCdhJyk7XHJcbmZ1bmN0aW9uIGFzZCgpIHt9XHJcbmlmICgxID09IDIpIHtcclxufVxyXG4iXSwibWFwcGluZ3MiOiJBQUFBO0FBQUE7QUFBQTtBQUFBO0FBRUE7QUFFQTtBQUNBO0FBQUE7QUFDQTtBQUFBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./app.js\n");
-
-/***/ }),
-
-/***/ "./lib/sayHello.js":
-/*!*************************!*\
-  !*** ./lib/sayHello.js ***!
-  \*************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("function sayHello() {\n  if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {\n    var args = ['\\n %c Made with ❤️ by alchimic %c ----/ %c %c 🐳 \\n\\n', 'border: 1px solid #000;color: #000; background: #fff001; padding:5px 0;', 'color: #fff; background: #1c1c1c; padding:5px 0;border: 1px solid #000;', 'background: #fff; padding:5px 0;', 'color: #b0976d; background: #fff; padding:5px 0;'];\n    window.console.log.apply(console, args);\n  } else if (window.console) {\n    window.console.log('Made with love ❤️  ❤️');\n  }\n}\n\nmodule.exports = sayHello;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9saWIvc2F5SGVsbG8uanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9saWIvc2F5SGVsbG8uanM/OWU0NyJdLCJzb3VyY2VzQ29udGVudCI6WyJmdW5jdGlvbiBzYXlIZWxsbygpIHtcbiAgaWYgKG5hdmlnYXRvci51c2VyQWdlbnQudG9Mb3dlckNhc2UoKS5pbmRleE9mKCdjaHJvbWUnKSA+IC0xKSB7XG4gICAgdmFyIGFyZ3MgPSBbJ1xcbiAlYyBNYWRlIHdpdGgg4p2k77iPIGJ5IGFsY2hpbWljICVjIC0tLS0vICVjICVjIPCfkLMgXFxuXFxuJywgJ2JvcmRlcjogMXB4IHNvbGlkICMwMDA7Y29sb3I6ICMwMDA7IGJhY2tncm91bmQ6ICNmZmYwMDE7IHBhZGRpbmc6NXB4IDA7JywgJ2NvbG9yOiAjZmZmOyBiYWNrZ3JvdW5kOiAjMWMxYzFjOyBwYWRkaW5nOjVweCAwO2JvcmRlcjogMXB4IHNvbGlkICMwMDA7JywgJ2JhY2tncm91bmQ6ICNmZmY7IHBhZGRpbmc6NXB4IDA7JywgJ2NvbG9yOiAjYjA5NzZkOyBiYWNrZ3JvdW5kOiAjZmZmOyBwYWRkaW5nOjVweCAwOyddO1xuICAgIHdpbmRvdy5jb25zb2xlLmxvZy5hcHBseShjb25zb2xlLCBhcmdzKTtcbiAgfSBlbHNlIGlmICh3aW5kb3cuY29uc29sZSkge1xuICAgIHdpbmRvdy5jb25zb2xlLmxvZygnTWFkZSB3aXRoIGxvdmUg4p2k77iPICDinaTvuI8nKTtcbiAgfVxufVxubW9kdWxlLmV4cG9ydHMgPSBzYXlIZWxsbztcbiJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQUEiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./lib/sayHello.js\n");
+eval("\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hcHAuanMuanMiLCJzb3VyY2VzIjpbXSwibWFwcGluZ3MiOiIiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./app.js\n");
 
 /***/ })
 

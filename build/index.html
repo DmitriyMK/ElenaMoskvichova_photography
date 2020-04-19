@@ -9,6 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="msapplication-TileColor" content="#181c25">
     <meta name="theme-color" content="#181c25">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <link rel="stylesheet" media="all" href="css/header.css" />
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="" />
@@ -28,7 +32,7 @@
   </head>
   <body>
     <!-- BEGIN content -->
-    <div class="mainwrap">
+    <div class="mainwrap" id="luxy">
       <header class="header">
         <div class="wrapper">
           <a href="tel:+"></a>
@@ -44,7 +48,15 @@
         </div>
       </header>
       <main class="main">
-        <div class="wrapper"></div>
+        <div class="wrapper">
+          <div>
+            <img src="./img/1_2560.webp" alt>
+            <img src="./img/2_2560.webp" alt>
+            <img src="./img/3_2560.webp" alt>
+            <img src="./img/4_2560.webp" alt>
+            <img src="./img/5_2560.webp" alt>
+          </div>
+        </div>
       </main>
       <footer></footer>
     </div>
@@ -53,7 +65,20 @@
     <link rel="stylesheet" media="all" href="css/main.css" />
     <!-- END styles -->
     <!-- BEGIN scripts -->
-    <script src="js/app.js"></script>
+    <script src="./js/lib/luxy.js"></script>
+    <script>
+      var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (!isMobile)
+      {
+        luxy.init(
+        {
+          wrapper: '#luxy',
+          wrapperSpeed: 0.1
+        });
+      }
+
+    </script>
+    <script src="./js/app.js"></script>
     <!-- END scripts -->
   </body>
 </html>

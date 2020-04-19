@@ -9,28 +9,39 @@ title: Started pages
 
 {% block content %}
 
-  {# partial example #}
-  {% include "partials/_header.html" %}
+{# partial example #}
+{% include "partials/_header.html" %}
 
-  <main class="main">
-    <div class="wrapper"></div>
-  </main>
+<main class="main">
+  <div class="wrapper">
 
-  {# variable example #}
-  {# <h1>312{{title}}1</h1> #}
+    <div>
+      <img src="./img/1_2560.webp" alt>
+      <img src="./img/2_2560.webp" alt>
+      <img src="./img/3_2560.webp" alt>
+      <img src="./img/4_2560.webp" alt>
+      <img src="./img/5_2560.webp" alt>
+    </div>
 
-  {# mixin example #}
-  {# {{mixins.icon('facebook')}} #}
+  </div>
+</main>
 
-  {# data usage example #}
-  {# {% import "data/data.html" as tests %}
+
+{# variable example #}
+{# <h1>312{{title}}1</h1> #}
+
+{# mixin example #}
+{# {{mixins.icon('facebook')}} #}
+
+{# data usage example #}
+{# {% import "data/data.html" as tests %}
 
   {% for test in tests.list %}
     <li>{{test.title}}</li>
   {% endfor %} #}
-  {# end of example #}
+{# end of example #}
 
-  {# partial example #}
-  {% include "partials/_footer.html" %}
+{# partial example #}
+{% include "partials/_footer.html" %}
 
 {% endblock %}
