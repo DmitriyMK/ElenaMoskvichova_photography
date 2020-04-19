@@ -32,6 +32,7 @@
   </head>
   <body>
     <!-- BEGIN content -->
+    <div id="trigger"></div>
     <div class="mainwrap" id="luxy">
       <header class="header">
         <div class="wrapper">
@@ -50,7 +51,7 @@
       <main class="main">
         <div class="wrapper">
           <div>
-            <img src="./img/1_2560.webp" alt>
+            <img class="hover-target" src="./img/1_2560.webp" alt>
             <img src="./img/2_2560.webp" alt>
             <img src="./img/3_2560.webp" alt>
             <img src="./img/4_2560.webp" alt>
@@ -58,6 +59,9 @@
           </div>
         </div>
       </main>
+      <div class='cursor' id="cursor"></div>
+      <div class='cursor2' id="cursor2"></div>
+      <div class='cursor3' id="cursor3"></div>
       <footer></footer>
     </div>
     <!-- END content -->
@@ -66,6 +70,7 @@
     <!-- END styles -->
     <!-- BEGIN scripts -->
     <script src="./js/lib/luxy.js"></script>
+    <!-- <script src="./js/lib/jquery-3.3.1.min.js"></script> -->
     <script>
       var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       if (!isMobile)
@@ -78,6 +83,10 @@
       }
 
     </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>
     <script src="./js/app.js"></script>
     <!-- END scripts -->
   </body>

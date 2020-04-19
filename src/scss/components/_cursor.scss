@@ -1,0 +1,60 @@
+@import "./helpers/_vars";
+
+@import "./helpers/_mixins";
+
+/* #Cursor
+================================================== */
+
+.cursor,
+.cursor2,
+.cursor3 {
+	position: fixed;
+	top: 50%;
+	left: -100px;
+	transform: translateX(-50%) translateY(-50%);
+	border-radius: 50%;
+	pointer-events: none
+}
+
+.cursor {
+	z-index: 99999;
+	width: 0;
+	height: 0;
+	background-color: $cursor-color;
+}
+
+.cursor2,
+.cursor3 {
+	z-index: 99998;
+	width: 36px;
+	height: 36px;
+	-webkit-transition: all .3s ease-out;
+	transition: all .3s ease-out
+}
+
+.cursor2.hover,
+.cursor3.hover {
+	-webkit-transform: scale(2) translateX(-25%) translateY(-25%);
+	transform: scale(2) translateX(-25%) translateY(-25%);
+	border: none
+}
+
+.cursor2 {
+	border: 2px solid $cursor-color;
+	box-shadow: 0 0 22px rgba(255, 255, 255, .6);
+}
+
+.cursor2.hover {
+	background: rgba(255,255,255,.1);
+	box-shadow: 0 0 12px rgba(255, 255, 255, .2);
+}
+
+
+@media screen and (max-width: 1200px) {
+
+	.cursor,
+	.cursor2,
+	.cursor3 {
+		display: none
+	}
+}
