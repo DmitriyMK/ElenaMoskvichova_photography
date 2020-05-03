@@ -3,128 +3,131 @@
 @import "../helpers/_mixins";
 
 .gallery {
-    margin-top: 900px;
+	margin-top: 900px;
 
-    &__item {
-        position: relative;
-        display: flex;
-        margin-bottom: 220px;
-        counter-increment: article;
+	&__item {
+		display: flex;
+		position: relative;
+		margin-bottom: 220px;
+		counter-increment: article;
 
-        &:after {
-            content: counter(article, decimal-leading-zero);
-            position: absolute;
-            top: 25%;
-            right: 8vw;
-            transform: rotate(90deg);
-            color: transparent;
-            font-size: rem(124);
-            -webkit-text-stroke: 2px $text-stroke;
-        }
-    }
+		&:after {
+			content: counter(article, decimal-leading-zero);
+			position: absolute;
+			top: 25%;
+			right: 8vw;
+			transform: rotate(90deg);
+			color: transparent;
+			font-size: rem(124);
+			-webkit-text-stroke: 2px $text-stroke;
+		}
+	}
 
-    &__img-wrap {
-        position: relative;
-        max-width: 70%;
-    }
+	&__img-wrap {
+		position: relative;
+		max-width: 70%;
+	}
 
-    &__title {
-        display: inline-block;
-        position: absolute;
-        z-index: 100;
-        top: -52px;
-        right: 0;
+	&__title {
+		display: inline-block;
+		position: absolute;
+		z-index: 100;
+		top: -52px;
+		right: 0;
+		transform-style: preserve-3d;
 
-        perspective: 1100px;
-        perspective-origin: 50% 100%;
-        background: linear-gradient($text-stroke 50%, transparent 50%);
-        font-size: rem(104);
-        font-weight: 700;
-        line-height: 1;
-        text-transform: uppercase;
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-        -webkit-text-stroke: 2px $text-stroke;
-        will-change: transform;
-        transform-style: preserve-3d;
-    }
+		perspective: 1100px;
+		perspective-origin: 50% 100%;
+		background: linear-gradient($text-stroke 50%, transparent 50%);
+		font-size: rem(104);
+		font-weight: 700;
+		line-height: 1;
+		text-transform: uppercase;
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+		-webkit-text-stroke: 2px $text-stroke;
+		will-change: transform;
+	}
 
-    &__num {
-        position: absolute;
-        top: 25%;
-        right: 8vw;
-        transform: rotate(90deg);
-        color: transparent;
-        font-size: rem(124);
-        -webkit-text-stroke: 2px $text-stroke;
-    }
+	&__num {
+		position: absolute;
+		top: 25%;
+		right: 8vw;
+		transform: rotate(90deg);
+		color: transparent;
+		font-size: rem(124);
+		-webkit-text-stroke: 2px $text-stroke;
+	}
 
-    &__img {
-        position: relative;
-        z-index: 1;
-        will-change: transform;
-    }
-    .img__wrap {
-        width: 100%;
-        overflow: hidden;
-    }
-    &__link {
-        display: flex;
-        height: 100%;
-        position: relative;
-        align-items: center;
-        justify-content: center;
+	&__img {
+		position: relative;
+		z-index: 1;
+		will-change: transform;
+	}
 
-        color: inherit;
-        font-size: rem(14);
-        font-weight: 500;
-        letter-spacing: 5px;
-        text-align: center;
-        text-decoration: none;
-        text-transform: uppercase;
-        transition: letter-spacing $transition-standart;
-        animation: infinite-spinning 2s linear infinite;
-        // cursor: none;
+	.img__wrap {
+		width: 100%;
+		overflow: hidden;
+	}
 
-        &-wrap {
-            position: relative;
-            overflow: hidden;
-            align-self: flex-end;
-            margin-bottom: 30px;
-            margin-left: -75px;
-            width: 150px;
-            height: 150px;
-            border: 2px solid $border-color;
-            border-radius: 50%;
-            z-index: 1;
+	&__link {
+		display: flex;
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		transition: letter-spacing $transition-standart;
+		animation: infinite-spinning 2s linear infinite;
 
-            &:hover {
-                .gallery__link {
-                    letter-spacing: 1.2px;
-                }
-            }
-        }
+		color: inherit;
+		font-size: rem(14);
+		font-weight: 500;
+		letter-spacing: 5px;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		// cursor: none;
 
-        &-effect {
-            border-radius: 100%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 0;
-            height: 0;
-            margin-left: 0;
-            margin-top: 0;
-            pointer-events: none;
+		&-wrap {
+			position: relative;
+			z-index: 1;
+			align-self: flex-end;
+			width: 150px;
+			height: 150px;
+			margin-bottom: 30px;
+			margin-left: -75px;
+			overflow: hidden;
+			border: 2px solid $border-color;
+			border-radius: 50%;
 
-            &.explode-circle {
-                animation: explode 0.3s forwards;
-            }
+			&:hover {
 
-            &.desplode-circle {
-                animation: desplode 0.3s forwards;
-            }
-        }
-    }
+				.gallery__link {
+					letter-spacing: 1.2px;
+				}
+			}
+		}
+
+		&-effect {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0;
+			height: 0;
+			margin-top: 0;
+			margin-left: 0;
+			border-radius: 100%;
+			pointer-events: none;
+
+			&.explode-circle {
+				animation: explode .3s forwards;
+			}
+
+			&.desplode-circle {
+				animation: desplode .3s forwards;
+			}
+		}
+	}
 }
 
 @include respond-to(phone) {}
@@ -145,41 +148,43 @@
 
 @keyframes infinite-spinning {
 
-    from {
-        transform: rotate(0deg);
-    }
+	from {
+		transform: rotate(0deg);
+	}
 
-    to {
-        transform: rotate(360deg);
-    }
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes explode {
-    0% {
-        background-color: rgba($border-color, 0);
-    }
 
-    100% {
-        width: 400px;
-        height: 400px;
-        margin-left: -200px;
-        margin-top: -200px;
-        background-color: $border-color;
-    }
+	0% {
+		background-color: rgba($border-color, 0);
+	}
+
+	100% {
+		width: 400px;
+		height: 400px;
+		margin-top: -200px;
+		margin-left: -200px;
+		background-color: $border-color;
+	}
 }
 
 @keyframes desplode {
-    0% {
-        width: 400px;
-        height: 400px;
-        margin-left: -200px;
-        margin-top: -200px;
-        background-color: $border-color;
-    }
 
-    100% {
+	0% {
+		width: 400px;
+		height: 400px;
+		margin-top: -200px;
+		margin-left: -200px;
+		background-color: $border-color;
+	}
 
-        background-color: rgba($border-color, 0);
-    }
+	100% {
+
+		background-color: rgba($border-color, 0);
+	}
 }
 
