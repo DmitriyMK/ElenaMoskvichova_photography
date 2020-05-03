@@ -42,11 +42,11 @@ function createConfig(env) {
           }
         }
       }),
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery',
-      }),
+      // new webpack.ProvidePlugin({
+      //   $: 'jquery',
+      //   jQuery: 'jquery',
+      //   'window.jQuery': 'jquery',
+      // }),
       new webpack.NoEmitOnErrorsPlugin(),
 
       new BundleAnalyzerPlugin({
@@ -91,8 +91,8 @@ function createConfig(env) {
             path.resolve(__dirname, 'node_modules'),
           ],
         },
-        { test: /\.(glsl|frag|vert)$/, loader: 'raw-loader', exclude: /node_modules/ },
-        { test: /\.(glsl|frag|vert)$/, loader: 'glslify-loader', exclude: /node_modules/ }
+        // { test: /\.(glsl|frag|vert)$/, loader: 'raw-loader', exclude: /node_modules/ },
+        // { test: /\.(glsl|frag|vert)$/, loader: 'glslify-loader', exclude: /node_modules/ }
       ],
     },
   };
