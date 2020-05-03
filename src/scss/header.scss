@@ -15,7 +15,7 @@
 // COMPONENTS
 // @import "./components/_burger";
 // @import "./components/_menuMobile";
-// @import "./components/_scrollUp";
+@import "./components/_scrollUp";
 // @import "./components/_video";
 // @import "./components/_cursor";
 
@@ -32,13 +32,7 @@
 // HACKS
 @import "./helpers/_hacks";
 
-// .svg with mask {
-//     display: none;
-// }
 
-// img for mask
-// clip-path: url('#figure');
-// transform: translateZ(1px);
 
 div {
 	@include respond-to(phone) {
