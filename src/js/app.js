@@ -25,7 +25,7 @@ $('.gallery__item').each(function() {
   let scene2 = new ScrollMagic.Scene({
     triggerElement: this,
     triggerHook: 0.45,
-    duration: '100%'
+    duration: '600px'
   })
     .setTween(tl2)
     // .addIndicators()
@@ -51,8 +51,8 @@ $('.gallery__item').each(function() {
     );
 
   tl2.to(images, 1, {
-    scaleX: 1.25,
-    scaleY: 1.25,
+    scaleX: 1.2,
+    scaleY: 1.2,
     ease: Elastic.easeOut.slow
   });
   tl2.to(titles, 4, {

@@ -9,7 +9,7 @@
 		display: flex;
 		position: relative;
 		margin-bottom: 220px;
-		counter-increment: article;
+        counter-increment: article;
 
 		&:after {
 			content: counter(article, decimal-leading-zero);
@@ -62,7 +62,8 @@
 	&__img {
 		position: relative;
 		z-index: 1;
-		will-change: transform;
+        will-change: transform;
+        -webkit-transform: translate3d(0,0,0);
 	}
 
 	.img__wrap {
@@ -187,4 +188,3 @@
 		background-color: rgba($border-color, 0);
 	}
 }
-
