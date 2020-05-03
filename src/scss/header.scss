@@ -49,9 +49,11 @@
 	}
 
 	&__illustration {
+		visibility: hidden;
 		position: absolute;
 		top: 220px;
 		right: 0;
+		opacity: 0;
 		will-change: transform;
 	}
 
@@ -76,10 +78,12 @@
 	}
 
 	&__img {
+		visibility: hidden;
 		position: relative;
 		z-index: 1;
 		max-width: 538px;
 		max-height: 380px;
+		opacity: 0;
 		box-shadow: 48px 16px 48px rgba(0,0,0,.2);
 		will-change: transform;
 	}

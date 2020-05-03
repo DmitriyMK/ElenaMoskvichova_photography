@@ -3,7 +3,7 @@ window.onload = function() {
   let timeline = new TimelineMax();
 
   timeline
-    .fromTo('.header__illustration', 0.6,
+    .fromTo('.header__illustration', 0.35,
       {
         scale: 0.9,
         opacity: 0,
@@ -20,7 +20,7 @@ window.onload = function() {
       },
       0.4
     )
-    .fromTo('.header__img', 0.6,
+    .fromTo('.header__img', 0.45,
       {
         visibility: 'hidden',
         opacity: 0
