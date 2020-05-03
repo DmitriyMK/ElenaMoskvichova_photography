@@ -1,5 +1,62 @@
-// Scrollmagic
+window.onload = function() {
 
+  let timeline = new TimelineMax();
+
+  timeline
+    .fromTo('.header__illustration', 0.6,
+      {
+        scale: 0.9,
+        opacity: 0,
+        visibility: 'hidden',
+        transform: 'translate3d(10px, 0, 0)'
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        visibility: 'visible',
+        transformOrigin: '100% 0',
+        transform: 'translate3d(0px, 0px, 0px)',
+        ease: Power1.easeIn
+      },
+      0.4
+    )
+    .fromTo('.header__img', 0.6,
+      {
+        visibility: 'hidden',
+        opacity: 0
+      },
+      {
+        visibility: 'visible',
+        opacity: 1,
+        rotation: -5,
+        transformOrigin: '100% 0',
+        ease: Power1.easeIn
+      },
+      0.5
+    );
+};
+
+
+
+
+// Rotate hover
+let cardWrap = document.getElementsByClassName('intro__img');
+document.body.addEventListener('mousemove', cursorPositionHandler);
+
+function cursorPositionHandler(e) {
+  var decimalX = e.clientX / window.innerWidth - 0.5;
+  var decimalY = e.clientY / window.innerHeight - 0.5;
+
+  TweenMax.to(cardWrap, 0.5, {
+    rotationY: 10 * decimalX,
+    rotationX: -10 * decimalY,
+    ease: Quad.easeOut,
+    transformPerspective: 1200,
+    transformOrigin: 'center'
+  });
+}
+
+// Scrollmagic
 let controller = new ScrollMagic.Controller();
 
 $('.gallery__item').each(function() {
@@ -12,24 +69,7 @@ $('.gallery__item').each(function() {
 
   let tl2 = new TimelineMax();
 
-  let scene = new ScrollMagic.Scene({
-    triggerElement: this,
-    triggerHook: 0.6,
-    reverse: false
-  })
-    .setTween(tl1)
-    // .addIndicators()
-    .addTo(controller);
-
-
-  let scene2 = new ScrollMagic.Scene({
-    triggerElement: this,
-    triggerHook: 0.45,
-    duration: '600px'
-  })
-    .setTween(tl2)
-    // .addIndicators()
-    .addTo(controller);
+  let tl3 = new TimelineMax();
 
 
   tl1.add('start')
@@ -50,15 +90,46 @@ $('.gallery__item').each(function() {
       'start'
     );
 
-  tl2.to(images, 1, {
-    scaleX: 1.2,
-    scaleY: 1.2,
-    ease: Elastic.easeOut.slow
-  });
   tl2.to(titles, 4, {
     x: '-400px',
     ease: Elastic.easeOut.slow
   });
+
+  tl3.to(images, 1, {
+    scaleX: 1.2,
+    scaleY: 1.2,
+    transformOrigin: '50% 50%',
+    ease: Elastic.easeOut.slow
+  });
+
+
+  let scene = new ScrollMagic.Scene({
+    triggerElement: this,
+    triggerHook: 0.6,
+    reverse: false
+  })
+    .setTween(tl1)
+    // .addIndicators()
+    .addTo(controller);
+
+
+  let scene2 = new ScrollMagic.Scene({
+    triggerElement: this,
+    triggerHook: 0.5,
+    duration: '1000'
+  })
+    .setTween(tl2)
+    .addTo(controller);
+
+
+  let scene3 = new ScrollMagic.Scene({
+    triggerElement: this,
+    offset: -180,
+    triggerHook: 0,
+    duration: '1000'
+  })
+    .setTween(tl3)
+    .addTo(controller);
 });
 
 
@@ -170,3 +241,4 @@ $('.gallery__link').mouseleave(function(e) {
   $(this).prev('.gallery__link-effect').addClass('desplode-circle');
 
 });
+

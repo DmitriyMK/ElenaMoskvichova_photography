@@ -32,27 +32,78 @@
 // HACKS
 @import "./helpers/_hacks";
 
+.header {
+	margin-bottom: 80px;
 
-
-div {
-	@include respond-to(phone) {
+	&__box {
+		position: relative;
 	}
 
-	@include respond-to(phone-xl) {
+	&__hero {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 1440px;
+		height: 324px;
 	}
 
-	@include respond-to(note) {
+	&__illustration {
+		position: absolute;
+		top: 220px;
+		right: 0;
+		will-change: transform;
 	}
 
-	@include respond-to(tablet) {
+	&__wrap {
+		display: flex;
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 900px;
 	}
 
-	@include respond-to(laptop) {
+	&__title {
+		padding-right: 80px;
+		font-size: rem(40);
 	}
 
-	@include respond-to(desktop) {
+	&__subtitle {
+		max-width: 600px;
+		padding-top: 15px;
+		font-size: rem(36);
 	}
 
-	@include respond-to(desktop-xl) {
+	&__img {
+		position: relative;
+		z-index: 1;
+		max-width: 538px;
+		max-height: 380px;
+		box-shadow: 48px 16px 48px rgba(0,0,0,.2);
+		will-change: transform;
 	}
+}
+
+
+
+@include respond-to(phone) {
+}
+
+@include respond-to(phone-xl) {
+}
+
+@include respond-to(note) {
+}
+
+@include respond-to(tablet) {
+}
+
+@include respond-to(laptop) {
+}
+
+@include respond-to(desktop) {
+}
+
+@include respond-to(desktop-xl) {
 }

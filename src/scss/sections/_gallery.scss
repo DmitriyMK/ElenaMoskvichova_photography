@@ -3,13 +3,12 @@
 @import "../helpers/_mixins";
 
 .gallery {
-	margin-top: 900px;
 
 	&__item {
 		display: flex;
 		position: relative;
 		margin-bottom: 220px;
-        counter-increment: article;
+		counter-increment: article;
 
 		&:after {
 			content: counter(article, decimal-leading-zero);
@@ -62,8 +61,8 @@
 	&__img {
 		position: relative;
 		z-index: 1;
-        will-change: transform;
-        -webkit-transform: translate3d(0,0,0);
+		will-change: transform;
+		-webkit-transform: translate3d(0,0,0);
 	}
 
 	.img__wrap {

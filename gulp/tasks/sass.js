@@ -9,18 +9,6 @@ var csso = require('postcss-csso');
 
 var processors = [
   autoprefixer({
-    browsers: [
-      'Chrome >= 64',
-      'Explorer >= 11',
-      'Firefox 58',
-      'Edge >= 16',
-      'iOS >= 11',
-      'Opera >= 50',
-      'Safari >= 10',
-      'ChromeAndroid >= 64',
-      'FirefoxAndroid >= 51',
-      'ExplorerMobile >= 11'
-    ],
     cascade: false
   }),
   require('lost'),
