@@ -16,23 +16,17 @@
 @media (max-width: $phone-xl) {
 }
 
-@include respond-to(phone) {
-}
 
-@include respond-to(phone-xl) {
-}
+@media #{$desktop-xl} {}
 
-@include respond-to(note) {
-}
+@media #{$desktop} {}
 
-@include respond-to(tablet) {
-}
+@media #{$laptop} {}
 
-@include respond-to(laptop) {
-}
+@media #{$tablet} {}
 
-@include respond-to(desktop) {
-}
+@media #{$note} {}
 
-@include respond-to(desktop-xl) {
-}
+@media #{$phone-xl} {}
+
+@media #{$phone} {}

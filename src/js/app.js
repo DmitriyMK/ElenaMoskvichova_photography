@@ -1,3 +1,13 @@
+
+// sayHello();
+
+// alert('a');
+// function asd(){}
+// if(1==2) {
+
+
+
+
 window.onload = function() {
 
   let timeline = new TimelineMax();
@@ -35,7 +45,6 @@ window.onload = function() {
       0.5
     );
 };
-
 
 
 
@@ -109,7 +118,7 @@ $('.gallery__item').each(function() {
     reverse: false
   })
     .setTween(tl1)
-    // .addIndicators()
+    .addIndicators()
     .addTo(controller);
 
 

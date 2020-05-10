@@ -104,12 +104,14 @@ $wrap-width: 1320px;
 }
 
 @for $i from 1 through $column {
+
 	.col-#{$i} {
 		width: $min-width * $i;
 	}
 }
 
 @for $i from 0 through ($column - 1) {
+
 	.offset-#{$i} {
 		margin-left: $min-width * $i;
 	}
@@ -117,12 +119,14 @@ $wrap-width: 1320px;
 
 @include respond-to(laptop) {
 	@for $i from 1 through $column {
+
 		.col-laptop-#{$i} {
 			width: $min-width * $i;
 		}
 	}
 
 	@for $i from 0 through ($column - 1) {
+
 		.offset-laptop-#{$i} {
 			margin-left: $min-width * $i;
 		}
@@ -131,12 +135,14 @@ $wrap-width: 1320px;
 
 @include respond-to(tablet) {
 	@for $i from 1 through $column {
+
 		.col-tablet-#{$i} {
 			width: $min-width * $i;
 		}
 	}
 
 	@for $i from 0 through ($column - 1) {
+
 		.offset-tablet-#{$i} {
 			margin-left: $min-width * $i;
 		}
@@ -149,12 +155,14 @@ $wrap-width: 1320px;
 
 @include respond-to($tablet-portrait) {
 	@for $i from 1 through $column {
+
 		.col-tablet-portrait-#{$i} {
 			width: $min-width * $i;
 		}
 	}
 
 	@for $i from 0 through ($column - 1) {
+
 		.offset-tablet-portrait-#{$i} {
 			margin-left: $min-width * $i;
 		}
@@ -163,12 +171,14 @@ $wrap-width: 1320px;
 
 @include respond-to($note) {
 	@for $i from 1 through $column {
+
 		.col-note-#{$i} {
 			width: $min-width * $i;
 		}
 	}
 
 	@for $i from 0 through ($column - 1) {
+
 		.offset-note-#{$i} {
 			margin-left: $min-width * $i;
 		}
@@ -177,12 +187,14 @@ $wrap-width: 1320px;
 
 @include respond-to($phone) {
 	@for $i from 1 through $column {
+
 		.col-phone-#{$i} {
 			width: $min-width * $i;
 		}
 	}
 
 	@for $i from 0 through ($column - 1) {
+
 		.offset-phone-#{$i} {
 			margin-left: $min-width * $i;
 		}
