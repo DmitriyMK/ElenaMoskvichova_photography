@@ -287,7 +287,7 @@ body {
   overflow-y: auto;
   background: #202d3f;
   color: #8595AE;
-  font-family: "Roboto", serif;
+  font-family: "Roboto", serif, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.2;
@@ -303,6 +303,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  /* "auto" or "thin"  */
+  scrollbar-color: blue tomato;
 }
 
 body::-webkit-scrollbar-track {
@@ -495,6 +498,10 @@ html {
   -webkit-box-shadow: 48px 16px 48px rgba(0, 0, 0, 0.2);
           box-shadow: 48px 16px 48px rgba(0, 0, 0, 0.2);
   will-change: transform;
+}
+
+.header__img img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=header.css.map */

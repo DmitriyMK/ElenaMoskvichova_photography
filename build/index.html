@@ -9,10 +9,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="msapplication-TileColor" content="#181c25">
     <meta name="theme-color" content="#181c25">
-    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
-    <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <!-- <link rel="icon" href="favicon.svg"> -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"> -->
+    <!-- favicon.ico in root -->
+    <!-- Icon for dark theme -->
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+      <style>
+        path {
+          fill: #000;
+        }
+        @media (prefers-color-scheme: dark) {
+          path {
+            fill: #fff;
+          }
+        }
+      </style>
+      <path fill-rule="evenodd" d="M0 0h16v16H0z"/>
+    </svg> -->
     <link rel="stylesheet" media="all" href="css/header.css" />
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="" />
@@ -63,9 +76,12 @@
     </button> -->
           <!-- <button class="btn" data-remodal-target="callback"></button> -->
           <!--  -->
-          <!-- 
-<svg class="icon icon-facebook"><use xlink:href="img/sprite.svg#icon-facebook"></use></svg>
- -->
+          <svg class="icon icon-telegram">
+            <use xlink:href="img/sprite-mono.svg#ico-mono-telegram"></use>
+          </svg>
+          <svg class="icon icon-telegram">
+            <use xlink:href="img/sprite-color.svg#ico-color-telegram"></use>
+          </svg>
         </div>
       </header>
       <main class="main">
@@ -177,8 +193,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script> --> <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>
-    <script src="./js/app.js"></script>
     <script src="./js/vendor.js"></script>
+    <script src="./js/app.js"></script>
     <!-- END scripts -->
   </body>
 </html>

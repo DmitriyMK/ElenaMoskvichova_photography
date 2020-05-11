@@ -51,7 +51,7 @@ const javascriptApp = () =>
       config.src.js + '/vendor/**/*.js',
       config.src.js + '/app.js',
       config.src.js + '/modules/**/*.js',
-      config.src.components + '/**/*.js',
+      // config.src.components + '/**/*.js',
     ])
     .pipe(plumber({ errorHandler: config.errorHandler }))
     .pipe(concat('app.js'))
@@ -72,7 +72,7 @@ const watch = () => () => {
       config.src.js + '/vendor/**/*.js',
       config.src.js + '/app.js',
       config.src.js + '/modules/**/*.js',
-      config.src.components + '/**/*.js',
+      // config.src.components + '/**/*.js',
     ],
     javascriptApp
   );

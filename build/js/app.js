@@ -4045,245 +4045,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     return e.$ === w && (e.$ = Kt), t && e.jQuery === w && (e.jQuery = Jt), w;
   }, t || (e.jQuery = e.$ = w), w;
 });
-$(window).scroll(function () {
-  var scrollHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
-  var start = document.documentElement.clientHeight;
-
-  if ($(this).scrollTop() > start / 2) {
-    $('.scrollup').fadeIn();
-    var persent = ($(this).scrollTop() + start) / scrollHeight * 100;
-    var angle = persent * 0.02 - 1 / 2;
-    var x = 180 * Math.cos(angle * Math.PI) + 100;
-    var y = 180 * Math.sin(angle * Math.PI) + 100;
-    var rez;
-
-    if (Math.cos(angle * Math.PI) >= 0) {
-      rez = 'M 100,-80 A180,180   0  0, 1 ' + x + ',' + y;
-    } else {
-      rez = 'M 100,-80 A180,180   0  0, 1 100 280 m0,0 A180,180 0  0, 1 ' + x + ',' + y;
-    }
-
-    $('#path-anim').attr('d', rez);
-  } else {
-    $('.scrollup').fadeOut();
-  }
-});
-$('.scrollup').click(function () {
-  $('html, body').animate({
-    scrollTop: 0
-  });
-  return false;
-}); // sayHello();
-// alert('a');
-// function asd(){}
-// if(1==2) {
-
-window.onload = function () {
-  var timeline = new TimelineMax();
-  timeline.fromTo('.header__illustration', 0.35, {
-    scale: 0.9,
-    opacity: 0,
-    visibility: 'hidden',
-    transform: 'translate3d(10px, 0, 0)'
-  }, {
-    scale: 1,
-    opacity: 1,
-    visibility: 'visible',
-    transformOrigin: '100% 0',
-    transform: 'translate3d(0px, 0px, 0px)',
-    ease: Power1.easeIn
-  }, 0.4).fromTo('.header__img', 0.45, {
-    visibility: 'hidden',
-    opacity: 0
-  }, {
-    visibility: 'visible',
-    opacity: 1,
-    rotation: -5,
-    transformOrigin: '100% 0',
-    ease: Power1.easeIn
-  }, 0.5);
-}; // Rotate hover
-
-
-var cardWrap = document.getElementsByClassName('intro__img');
-document.body.addEventListener('mousemove', cursorPositionHandler);
-
-function cursorPositionHandler(e) {
-  var decimalX = e.clientX / window.innerWidth - 0.5;
-  var decimalY = e.clientY / window.innerHeight - 0.5;
-  TweenMax.to(cardWrap, 0.5, {
-    rotationY: 10 * decimalX,
-    rotationX: -10 * decimalY,
-    ease: Quad.easeOut,
-    transformPerspective: 1200,
-    transformOrigin: 'center'
-  });
-} // Scrollmagic
-
-
-var controller = new ScrollMagic.Controller();
-$('.gallery__item').each(function () {
-  var titles = $(this).find('.gallery__title');
-  var images = $(this).find('.gallery__img');
-  var tl1 = new TimelineMax({
-    pause: true
-  });
-  var tl2 = new TimelineMax();
-  var tl3 = new TimelineMax();
-  tl1.add('start').fromTo(titles, 0.35, {
-    y: '100px',
-    opacity: 0,
-    skewY: 10,
-    skewX: 35
-  }, {
-    y: '0px',
-    opacity: 1,
-    skewY: 0,
-    skewX: 0,
-    ease: Elastic.easeOut.slow
-  }, 'start');
-  tl2.to(titles, 4, {
-    x: '-400px',
-    ease: Elastic.easeOut.slow
-  });
-  tl3.to(images, 1, {
-    scaleX: 1.2,
-    scaleY: 1.2,
-    transformOrigin: '50% 50%',
-    ease: Elastic.easeOut.slow
-  });
-  var scene = new ScrollMagic.Scene({
-    triggerElement: this,
-    triggerHook: 0.6,
-    reverse: false
-  }).setTween(tl1).addIndicators().addTo(controller);
-  var scene2 = new ScrollMagic.Scene({
-    triggerElement: this,
-    triggerHook: 0.5,
-    duration: '1000'
-  }).setTween(tl2).addTo(controller);
-  var scene3 = new ScrollMagic.Scene({
-    triggerElement: this,
-    offset: -180,
-    triggerHook: 0,
-    duration: '1000'
-  }).setTween(tl3).addTo(controller);
-}); // Hover moving
-
-var hoverMouse = function hoverMouse($el) {
-  $el.each(function () {
-    var $self = $(this);
-    var hover = false;
-    var offsetHoverMax = $self.attr('offset-hover-max') || 0.5;
-    var offsetHoverMin = $self.attr('offset-hover-min') || 0.7;
-
-    var attachEventsListener = function attachEventsListener() {
-      $(window).on('mousemove', function (e) {
-        var hoverArea = hover ? offsetHoverMax : offsetHoverMin; // cursor
-
-        var cursor = {
-          x: e.clientX,
-          y: e.clientY + $(window).scrollTop()
-        }; // size
-
-        var width = $self.outerWidth();
-        var height = $self.outerHeight(); // position
-
-        var offset = $self.offset();
-        var elPos = {
-          x: offset.left + width / 2,
-          y: offset.top + height / 2
-        }; // comparaison
-
-        var x = cursor.x - elPos.x;
-        var y = cursor.y - elPos.y; // dist
-
-        var dist = Math.sqrt(x * x + y * y); // mutex hover
-
-        var mutHover = false; // anim
-
-        if (dist < width * hoverArea) {
-          mutHover = true;
-
-          if (!hover) {
-            hover = true;
-          }
-
-          onHover(x, y);
-        } // reset
-
-
-        if (!mutHover && hover) {
-          onLeave();
-          hover = false;
-        }
-      });
-    };
-
-    var onHover = function onHover(x, y) {
-      TweenMax.to($self, 0.4, {
-        x: x * 0.8,
-        y: y * 0.8,
-        //scale: .9,
-        rotation: x * 0.05,
-        ease: Power2.easeOut
-      });
-    };
-
-    var onLeave = function onLeave() {
-      TweenMax.to($self, 0.7, {
-        x: 0,
-        y: 0,
-        scale: 1,
-        rotation: 0,
-        ease: Elastic.easeOut.slow
-      });
-    };
-
-    attachEventsListener();
-  });
-};
-
-hoverMouse($('.gallery__link-wrap')); // Hover animation
-
-$('.gallery__link').mouseenter(function (e) {
-  var parentOffset = $(this).offset();
-  var relX = e.pageX - parentOffset.left;
-  var relY = e.pageY - parentOffset.top;
-  $(this).prev('.gallery__link-effect').css({
-    'left': relX,
-    'top': relY
-  });
-  $(this).prev('.gallery__link-effect').removeClass('desplode-circle');
-  $(this).prev('.gallery__link-effect').addClass('explode-circle');
-});
-$('.gallery__link').mouseleave(function (e) {
-  var parentOffset = $(this).offset();
-  var relX = e.pageX - parentOffset.left;
-  var relY = e.pageY - parentOffset.top;
-  $(this).prev('.gallery__link-effect').css({
-    'left': relX,
-    'top': relY
-  });
-  $(this).prev('.gallery__link-effect').removeClass('explode-circle');
-  $(this).prev('.gallery__link-effect').addClass('desplode-circle');
-});
-
-function sayHello() {
-  if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
-    var args = ['\n %c Made with ❤️ by alchimic %c ----/ %c %c 🐳 \n\n', 'border: 1px solid #000;color: #000; background: #fff001; padding:5px 0;', 'color: #fff; background: #1c1c1c; padding:5px 0;border: 1px solid #000;', 'background: #fff; padding:5px 0;', 'color: #b0976d; background: #fff; padding:5px 0;'];
-    window.console.log.apply(console, args);
-  } else if (window.console) {
-    window.console.log('Made with love ❤️  ❤️');
-  }
-}
 /*!
  * @copyright Copyright (c) 2017 IcoMoon.io
  * @license   Licensed under MIT license
  *            See https://github.com/Keyamoon/svgxuse
  * @version   1.2.6
  */
-
 
 (function () {
   if ("undefined" !== typeof window && window.addEventListener) {
@@ -4405,3 +4172,234 @@ function sayHello() {
     "complete" !== document.readyState ? window.addEventListener("load", p, !1) : p();
   }
 })();
+
+sayHello();
+
+window.onload = function () {
+  var timeline = new TimelineMax();
+  timeline.fromTo('.header__illustration', 0.35, {
+    scale: 0.9,
+    opacity: 0,
+    visibility: 'hidden',
+    transform: 'translate3d(10px, 0, 0)'
+  }, {
+    scale: 1,
+    opacity: 1,
+    visibility: 'visible',
+    transformOrigin: '100% 0',
+    transform: 'translate3d(0px, 0px, 0px)',
+    ease: Power1.easeIn
+  }, 0.4).fromTo('.header__img', 0.45, {
+    visibility: 'hidden',
+    opacity: 0
+  }, {
+    visibility: 'visible',
+    opacity: 1,
+    rotation: -5,
+    transformOrigin: '100% 0',
+    ease: Power1.easeIn
+  }, 0.5);
+}; // Scrollmagic
+
+
+var controller = new ScrollMagic.Controller();
+$('.gallery__item').each(function () {
+  var titles = $(this).find('.gallery__title');
+  var images = $(this).find('.gallery__img');
+  var tl1 = new TimelineMax({
+    pause: true
+  });
+  var tl2 = new TimelineMax();
+  var tl3 = new TimelineMax();
+  tl1.add('start').fromTo(titles, 0.35, {
+    y: '100px',
+    opacity: 0,
+    skewY: 10,
+    skewX: 35
+  }, {
+    y: '0px',
+    opacity: 1,
+    skewY: 0,
+    skewX: 0,
+    ease: Elastic.easeOut.slow
+  }, 'start');
+  tl2.to(titles, 4, {
+    x: '-400px',
+    ease: Elastic.easeOut.slow
+  });
+  tl3.to(images, 1, {
+    scaleX: 1.2,
+    scaleY: 1.2,
+    transformOrigin: '50% 50%',
+    ease: Elastic.easeOut.slow
+  });
+  var scene = new ScrollMagic.Scene({
+    triggerElement: this,
+    triggerHook: 0.6,
+    reverse: false
+  }).setTween(tl1).addIndicators().addTo(controller);
+  var scene2 = new ScrollMagic.Scene({
+    triggerElement: this,
+    triggerHook: 0.5,
+    duration: '1000'
+  }).setTween(tl2).addTo(controller);
+  var scene3 = new ScrollMagic.Scene({
+    triggerElement: this,
+    offset: -180,
+    triggerHook: 0,
+    duration: '1000'
+  }).setTween(tl3).addTo(controller);
+}); // Hover animation
+
+$('.gallery__link').mouseenter(function (e) {
+  var parentOffset = $(this).offset();
+  var relX = e.pageX - parentOffset.left;
+  var relY = e.pageY - parentOffset.top;
+  $(this).prev('.gallery__link-effect').css({
+    'left': relX,
+    'top': relY
+  });
+  $(this).prev('.gallery__link-effect').removeClass('desplode-circle');
+  $(this).prev('.gallery__link-effect').addClass('explode-circle');
+});
+$('.gallery__link').mouseleave(function (e) {
+  var parentOffset = $(this).offset();
+  var relX = e.pageX - parentOffset.left;
+  var relY = e.pageY - parentOffset.top;
+  $(this).prev('.gallery__link-effect').css({
+    'left': relX,
+    'top': relY
+  });
+  $(this).prev('.gallery__link-effect').removeClass('explode-circle');
+  $(this).prev('.gallery__link-effect').addClass('desplode-circle');
+}); // Hover moving
+
+var hoverMouse = function hoverMouse($el) {
+  $el.each(function () {
+    var $self = $(this);
+    var hover = false;
+    var offsetHoverMax = $self.attr('offset-hover-max') || 0.5;
+    var offsetHoverMin = $self.attr('offset-hover-min') || 0.7;
+
+    var attachEventsListener = function attachEventsListener() {
+      $(window).on('mousemove', function (e) {
+        var hoverArea = hover ? offsetHoverMax : offsetHoverMin; // cursor
+
+        var cursor = {
+          x: e.clientX,
+          y: e.clientY + $(window).scrollTop()
+        }; // size
+
+        var width = $self.outerWidth();
+        var height = $self.outerHeight(); // position
+
+        var offset = $self.offset();
+        var elPos = {
+          x: offset.left + width / 2,
+          y: offset.top + height / 2
+        }; // comparaison
+
+        var x = cursor.x - elPos.x;
+        var y = cursor.y - elPos.y; // dist
+
+        var dist = Math.sqrt(x * x + y * y); // mutex hover
+
+        var mutHover = false; // anim
+
+        if (dist < width * hoverArea) {
+          mutHover = true;
+
+          if (!hover) {
+            hover = true;
+          }
+
+          onHover(x, y);
+        } // reset
+
+
+        if (!mutHover && hover) {
+          onLeave();
+          hover = false;
+        }
+      });
+    };
+
+    var onHover = function onHover(x, y) {
+      TweenMax.to($self, 0.4, {
+        x: x * 0.8,
+        y: y * 0.8,
+        //scale: .9,
+        rotation: x * 0.05,
+        ease: Power2.easeOut
+      });
+    };
+
+    var onLeave = function onLeave() {
+      TweenMax.to($self, 0.7, {
+        x: 0,
+        y: 0,
+        scale: 1,
+        rotation: 0,
+        ease: Elastic.easeOut.slow
+      });
+    };
+
+    attachEventsListener();
+  });
+};
+
+hoverMouse($('.gallery__link-wrap')); // Rotate hover
+
+var cardWrap = document.getElementsByClassName('intro__img');
+document.body.addEventListener('mousemove', cursorPositionHandler);
+
+function cursorPositionHandler(e) {
+  var decimalX = e.clientX / window.innerWidth - 0.5;
+  var decimalY = e.clientY / window.innerHeight - 0.5;
+  TweenMax.to(cardWrap, 0.5, {
+    rotationY: 10 * decimalX,
+    rotationX: -10 * decimalY,
+    ease: Quad.easeOut,
+    transformPerspective: 1200,
+    transformOrigin: 'center'
+  });
+}
+
+function sayHello() {
+  if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
+    var args = ['\n %c Made with ❤️ by alchimic %c ----/ %c %c 🐳 \n\n', 'border: 1px solid #000;color: #000; background: #fff001; padding:5px 0;', 'color: #fff; background: #1c1c1c; padding:5px 0;border: 1px solid #000;', 'background: #fff; padding:5px 0;', 'color: #b0976d; background: #fff; padding:5px 0;'];
+    window.console.log.apply(console, args);
+  } else if (window.console) {
+    window.console.log('Made with love ❤️  ❤️');
+  }
+}
+
+$(window).scroll(function () {
+  var scrollHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
+  var start = document.documentElement.clientHeight;
+
+  if ($(this).scrollTop() > start / 2) {
+    $('.scrollup').fadeIn();
+    var persent = ($(this).scrollTop() + start) / scrollHeight * 100;
+    var angle = persent * 0.02 - 1 / 2;
+    var x = 180 * Math.cos(angle * Math.PI) + 100;
+    var y = 180 * Math.sin(angle * Math.PI) + 100;
+    var rez;
+
+    if (Math.cos(angle * Math.PI) >= 0) {
+      rez = 'M 100,-80 A180,180   0  0, 1 ' + x + ',' + y;
+    } else {
+      rez = 'M 100,-80 A180,180   0  0, 1 100 280 m0,0 A180,180 0  0, 1 ' + x + ',' + y;
+    }
+
+    $('#path-anim').attr('d', rez);
+  } else {
+    $('.scrollup').fadeOut();
+  }
+});
+$('.scrollup').click(function () {
+  $('html, body').animate({
+    scrollTop: 0
+  });
+  return false;
+});
