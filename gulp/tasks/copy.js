@@ -3,6 +3,8 @@ import config from '../config';
 
 const copyRootfiles = () => gulp.src(config.src.root + '/*.*').pipe(gulp.dest(config.dest.root));
 
+const copyJsLibs = () => gulp.src(config.src.js + '/libs/**/*.js').pipe(gulp.dest(config.dest.js + '/libs/'));
+
 const copyFonts = () =>
   gulp.src(config.src.fonts + '/*.{woff,woff2,ttf,eot,svg}').pipe(gulp.dest(config.dest.fonts));
 
@@ -12,9 +14,10 @@ const copyPhp = () => gulp.src(config.src.php + '/*.*').pipe(gulp.dest(config.de
 
 const copyJson = () => gulp.src(config.src.json + '/*.*').pipe(gulp.dest(config.dest.json));
 
-const copyTask = () => gulp.parallel(copyRootfiles, copyFonts, copyVideo, copyPhp, copyJson);
+const copyTask = () => gulp.parallel(copyRootfiles, copyFonts, copyVideo, copyPhp, copyJson, copyJsLibs);
 
 const watch = () => () => {
+  gulp.watch(config.src.js + '/libs/**/*.js', copyJsLibs);
   gulp.watch(config.src.root + '/*.*', copyRootfiles);
   gulp.watch(config.src.fonts + '/*.{woff,woff2,ttf,eot,svg}', copyFonts);
   gulp.watch(config.src.video + '/*.*', copyVideo);
