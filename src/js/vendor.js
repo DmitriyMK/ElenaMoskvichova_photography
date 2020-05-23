@@ -1,4 +1,4 @@
-// import $ from 'jquery';
+import $ from 'jquery';
 // import svg4everybody from 'svg4everybody';
 // import picturefill from 'picturefill';
 // import viewportUnitsBuggyfill from 'viewport-units-buggyfill';
@@ -36,8 +36,8 @@
 
 // expose imports to window to use in app.js
 // (jquery is exposed in expose-loader)
-// window.jQuery = $;
-// window.$ = $;
+window.jQuery = $;
+window.$ = $;
 // window.svg4everybody = svg4everybody;
 // window.picturefill = picturefill;
 // window.objectFitImages = objectFitImages;

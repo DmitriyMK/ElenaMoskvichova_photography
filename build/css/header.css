@@ -411,13 +411,13 @@ html {
 }
 
 .icon-facebook {
-  width: 0.53em;
+  width: .53em;
   height: 1em;
   fill: initial;
 }
 
 .icon-facebook2 {
-  width: 0.53em;
+  width: .53em;
   height: 1em;
   fill: initial;
 }
@@ -440,6 +440,68 @@ html {
   margin-bottom: 80px;
 }
 
+.header__top {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 36px;
+}
+
+.header__top .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1200px;
+  margin: 5px auto;
+  padding: 10px 15px;
+}
+
+.header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__logo svg {
+  width: 80px;
+  height: 80px;
+  fill: #fff;
+}
+
+.header__logo div {
+  margin-left: 18px;
+}
+
+.header__smm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 250px;
+}
+
+.header__smm li {
+  margin-right: 8px;
+}
+
+.header__smm svg {
+  width: 50px;
+  height: 50px;
+}
+
 .header__box {
   position: relative;
 }
@@ -454,11 +516,9 @@ html {
 }
 
 .header__illustration {
-  visibility: hidden;
   position: absolute;
   top: 220px;
   right: 0;
-  opacity: 0;
   will-change: transform;
 }
 
@@ -474,7 +534,9 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
+  max-width: 1200px;
   height: 900px;
+  margin: auto;
 }
 
 .header__title {
@@ -489,12 +551,10 @@ html {
 }
 
 .header__img {
-  visibility: hidden;
   position: relative;
   z-index: 1;
   max-width: 538px;
   max-height: 380px;
-  opacity: 0;
   -webkit-box-shadow: 48px 16px 48px rgba(0, 0, 0, 0.2);
           box-shadow: 48px 16px 48px rgba(0, 0, 0, 0.2);
   will-change: transform;
@@ -502,6 +562,78 @@ html {
 
 .header__img img {
   width: 100%;
+}
+
+.bubbles path:nth-of-type(odd) {
+  -webkit-animation: animationBubble1 12s linear infinite;
+          animation: animationBubble1 12s linear infinite;
+  will-change: transform;
+}
+
+.bubbles path:nth-of-type(even) {
+  -webkit-animation: animationBubble2 7s linear infinite;
+          animation: animationBubble2 7s linear infinite;
+  will-change: transform;
+}
+
+@-webkit-keyframes animationBubble1 {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(12px);
+            transform: translateY(12px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes animationBubble1 {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(12px);
+            transform: translateY(12px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes animationBubble2 {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-13px);
+            transform: translateY(-13px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes animationBubble2 {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-13px);
+            transform: translateY(-13px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
 }
 
 /*# sourceMappingURL=header.css.map */

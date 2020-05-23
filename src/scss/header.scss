@@ -35,8 +35,59 @@
 .header {
 	margin-bottom: 80px;
 
+	&__top {
+		position: fixed;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 36px;
+
+		.box {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			max-width: 1200px;
+			margin: 5px auto;
+			padding: 10px 15px;
+		}
+
+
+	}
+
+	&__logo {
+		display: flex;
+		align-items: center;
+
+		svg {
+			width: 80px;
+			height: 80px;
+			fill: #fff;
+		}
+
+		div {
+			margin-left: 18px;
+		}
+	}
+
+	&__smm {
+		display: flex;
+		justify-content: space-between;
+		max-width: 250px;
+
+		li {
+			margin-right: 8px;
+		}
+
+		svg {
+			width: 50px;
+			height: 50px;
+		}
+	}
+
 	&__box {
 		position: relative;
+
 	}
 
 	&__hero {
@@ -49,11 +100,9 @@
 	}
 
 	&__illustration {
-		visibility: hidden;
 		position: absolute;
 		top: 220px;
 		right: 0;
-		opacity: 0;
 		will-change: transform;
 	}
 
@@ -63,7 +112,9 @@
 		align-items: center;
 		justify-content: center;
 		width: 100%;
+		max-width: 1200px;
 		height: 900px;
+		margin: auto;
 	}
 
 	&__title {
@@ -78,12 +129,10 @@
 	}
 
 	&__img {
-		visibility: hidden;
 		position: relative;
 		z-index: 1;
 		max-width: 538px;
 		max-height: 380px;
-		opacity: 0;
 		box-shadow: 48px 16px 48px rgba(0,0,0,.2);
 		will-change: transform;
 
@@ -93,4 +142,44 @@
 	}
 }
 
+.bubbles path:nth-of-type(odd) {
+	animation: animationBubble1 12s linear infinite;
+	will-change: transform;
+}
 
+.bubbles path:nth-of-type(even) {
+	animation: animationBubble2 7s linear infinite;
+	will-change: transform;
+}
+
+
+
+@keyframes animationBubble1 {
+
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(12px);
+	}
+
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+@keyframes animationBubble2 {
+
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-13px);
+	}
+
+	100% {
+		transform: translateY(0px);
+	}
+}

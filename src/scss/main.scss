@@ -1,10 +1,16 @@
 /* HELPERS */
 @import "./helpers/_vars";
 
+@import "./plugins/slick";
+
+@import "./plugins/_slick-customize";
+
+
+//  MAIN STYLE
 @import "./sections/_gallery";
 
 @import "./sections/_intro";
-//  MAIN STYLE
+
 
 // object-fit: cover;
 // object-position: 50% 20%;

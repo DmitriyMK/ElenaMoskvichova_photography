@@ -13,23 +13,23 @@ import config from '../config';
 // TODO - move to webpack.config.js
 const webpackConfig = {
   mode: config.production ? 'production' : 'development',
-  module: {
-    rules: [
-      {
-        test: require.resolve('jquery'),
-        use: [
-          {
-            loader: 'expose-loader',
-            options: 'jQuery',
-          },
-          {
-            loader: 'expose-loader',
-            options: '$',
-          },
-        ],
-      },
-    ],
-  }
+  // module: {
+  //   rules: [
+  //     {
+  //       test: require.resolve('jquery'),
+  //       use: [
+  //         {
+  //           loader: 'expose-loader',
+  //           options: 'jQuery',
+  //         },
+  //         {
+  //           loader: 'expose-loader',
+  //           options: '$',
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // }
 };
 
 const javascriptVendor = () =>
