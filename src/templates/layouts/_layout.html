@@ -17,10 +17,10 @@
 
   <!-- <link rel="icon" href="favicon.svg"> -->
   <!-- <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"> -->
-    <!-- favicon.ico in root -->
+  <!-- favicon.ico in root -->
 
-    <!-- Icon for dark theme -->
-    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+  <!-- Icon for dark theme -->
+  <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
       <style>
         path {
           fill: #000;
@@ -39,41 +39,19 @@
 </head>
 
 <body>
-
-  <!-- BEGIN content -->
   <div id="trigger"></div>
-  <!-- <div id="luxy"> -->
-    <div class="mainwrap">
-      {% block content %}{% endblock %}
-    </div>
-  <!-- </div> -->
-  <!-- END content -->
+  <div class="mainwrap">
+    {% block content %}{% endblock %}
+  </div>
 
-  <!-- BEGIN styles -->
   <link rel="stylesheet" media="all" href="css/main.css" />
-  <!-- END styles -->
-
-  <!-- BEGIN scripts -->
-  <!-- <script>
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (!isMobile) {
-      luxy.init({
-        wrapper: '#luxy',
-        wrapperSpeed: 0.1
-      });
-    }
-  </script> -->
   <script src="./js/vendor.js"></script>
-  <script src="./js/libs/gsap.min.js"></script>
+  <script src="./js/libs/TweenMax.min.js"></script>
   <script src="./js/libs/ScrollMagic.min.js"></script>
   <script src="./js/libs/debug.addIndicators.min.js"></script>
   <script src="./js/libs/animation.gsap.min.js"></script>
   <script src="./js/libs/slick.js"></script>
-
-
   <script src="./js/app.js"></script>
-  <!-- END scripts -->
-
 </body>
 
 </html>

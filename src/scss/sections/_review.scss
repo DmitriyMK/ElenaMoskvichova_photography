@@ -1,0 +1,42 @@
+@import "../helpers/_vars";
+
+@import "../helpers/_mixins";
+
+
+.review {
+	margin-bottom: 160px;
+
+	&__box {
+		position: relative;
+		width: 100%;
+		max-width: 728px;
+		margin: auto;
+	}
+
+	&__illustration {
+		position: absolute;
+		z-index: 2;
+		top: -60px;
+		right: -60px;
+	}
+
+	&__illustration2 {
+		position: absolute;
+		z-index: 1;
+		top: -40px;
+		left: -180px;
+		max-width: 600px;
+	}
+
+	&__slider {
+		position: relative;
+		z-index: 99;
+		margin: 40px 0;
+		cursor: grabbing;
+
+		img {
+			margin: auto;
+
+		}
+	}
+}

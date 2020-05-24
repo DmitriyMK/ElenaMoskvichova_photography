@@ -1,5 +1,5 @@
 // Rotate hover
-let cardWrap = document.getElementsByClassName('intro__img');
+let cardWrap = document.getElementsByClassName('instagram__item');
 document.body.addEventListener('mousemove', cursorPositionHandler);
 
 function cursorPositionHandler(e) {

@@ -1,9 +1,6 @@
 <header class="header">
   <div class="wrapper">
 
-    <!-- <a href="tel:+"></a> -->
-
-    <!-- {# variable example #} -->
     <div class="header__top">
       <div class="box">
         <div class="header__logo">
@@ -11,29 +8,48 @@
             {{mixins.iconColor('logo')}}
           </a>
           <div>
-            <h1>Elena Moskvichova</h1>
-            <h2>Family photographer</h2>
+            <h1>
+              Elena Moskvichova <br>
+              Family photographer
+            </h1>
           </div>
         </div>
 
-        <ul class="header__smm">
+        <nav class="header__nav nav">
+          <h2 class="offscreen">Навигационное меню</h2>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="#services">Услуги</a>
+            </li>
+
+            <li class="nav__item">
+              <a class="nav__link" href="#gallery">Портфолио работ</a>
+            </li>
+
+            <li class="nav__item">
+              <a class="nav__link" href="#review">Отзывы</a>
+            </li>
+          </ul>
+        </nav>
+
+        <ul class="header__smm smm">
           <li>
-            <a href="{{fbLink}}" target="_blank" rel="noopener noreferrer">
+            <a href="{{fbLink}}" target="_blank" rel="noopener noreferrer" title="facebook">
               {{mixins.iconColor('facebook')}}
             </a>
           </li>
           <li>
-            <a href="{{instaLink}}" target="_blank" rel="noopener noreferrer">
+            <a href="{{instaLink}}" target="_blank" rel="noopener noreferrer" title="instagram">
               {{mixins.iconColor('instagram')}}
             </a>
           </li>
           <li>
-            <a href="{{telegramLink}}" target="_blank" rel="noopener noreferrer">
+            <a href="{{telegramLink}}" target="_blank" rel="noopener noreferrer" title="telegram">
               {{mixins.iconColor('telegram')}}
             </a>
           </li>
           <li>
-            <a href="{{mobileLink}}" target="_blank" rel="noopener noreferrer">
+            <a href="{{mobileLink}}" target="_blank" rel="noopener noreferrer" title="phone">
               {{mixins.iconColor('callMe')}}
             </a>
           </li>
@@ -41,11 +57,11 @@
       </div>
     </div>
 
-    <div class="header__box">
-      <div class="header__hero">
-        <img class="hero1" src="./img/header-illustration-dark.svg" alt role="presenation">
-      </div>
+    <div class="header__hero">
+      <img class="hero1" src="./img/header-illustration-dark.svg" alt role="presenation">
+    </div>
 
+    <div class="header__box">
       <div class="header__illustration">
         <svg width="733" height="749" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -103,9 +119,9 @@
           <h2 class="header__title">
             Семейное фото
           </h2>
-          <h3 class="header__subtitle">
+          <strong class="header__subtitle">
             Сохрани свои лучшие воспоминания навсегда
-          </h3>
+          </strong>
         </div>
 
         <div class="header__img">

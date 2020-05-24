@@ -105,7 +105,7 @@ $(".gallery__item").each(function () {
     "0.5"
   );
   tl4.fromTo(
-    '.intro__illustration2',
+    '.review__illustration2',
     0.25,
     {
       opacity: 0,
@@ -148,7 +148,7 @@ $(".gallery__item").each(function () {
     .addTo(controller);
 
   let scene4 = new ScrollMagic.Scene({
-    triggerElement: '#intro',
+    triggerElement: '#review',
   })
     .setTween(tl4)
     .addIndicators()
@@ -156,14 +156,16 @@ $(".gallery__item").each(function () {
 });
 
 
-$('.review__slider').slick({
-
-  dots: true,
-  arrow: true,
+$(".review__slider").slick({
+  dots: false,
+  arrow: false,
   slidesToShow: 1,
   slidesToScroll: 1,
   fade: true,
-  cssEase: 'linear',
-
   infinite: true,
+  autoplaySpeed: 3500,
+  autoplay: true,
+  infinite: true,
+  cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
+  touchThreshold: 100,
 });

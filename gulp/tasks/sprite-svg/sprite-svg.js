@@ -27,15 +27,33 @@ const spriteSvgMono = () =>
           {
             removeDesc: true,
           },
-          {
-            cleanupIDs: true,
-          },
+          // {
+          //   cleanupIDs: true,
+          // },
           {
             removeViewBox: false,
           },
           {
             mergePaths: false,
           },
+          {
+            removeComments: true
+          },
+          {
+            removeMetadata: true
+          },
+          {
+            removeEditorsNSData: true
+          },
+          {
+            removeAttrs: { attrs: 'data.*' }
+          },
+          {
+            removeStyleElement: true
+          },
+          {
+            cleanupIDs: false
+          }
         ],
       })
     )
@@ -108,9 +126,9 @@ const spriteSvgColor = () =>
           {
             removeDesc: true,
           },
-          {
-            cleanupIDs: true,
-          },
+          // {
+          //   cleanupIDs: true,
+          // },
           {
             removeViewBox: false,
           },
@@ -118,11 +136,23 @@ const spriteSvgColor = () =>
             mergePaths: false,
           },
           {
-            removeDimensions: false,
+            removeComments: true
           },
           {
-            removeAttrs: false,
+            removeMetadata: true
           },
+          {
+            removeEditorsNSData: true
+          },
+          {
+            removeAttrs: { attrs: 'data.*' }
+          },
+          {
+            removeStyleElement: true
+          },
+          {
+            cleanupIDs: false
+          }
         ],
       })
     )

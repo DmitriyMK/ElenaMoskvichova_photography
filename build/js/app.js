@@ -1,5 +1,9 @@
 "use strict";
 
+var _$$slick;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 /*!
  * @copyright Copyright (c) 2017 IcoMoon.io
  * @license   Licensed under MIT license
@@ -201,7 +205,7 @@ $(".gallery__item").each(function () {
     transformOrigin: "0% 100%",
     ease: Elastic.easeOut.slow
   }, "0.5");
-  tl4.fromTo('.intro__illustration2', 0.25, {
+  tl4.fromTo('.review__illustration2', 0.25, {
     opacity: 0,
     x: '40px'
   }, {
@@ -227,18 +231,19 @@ $(".gallery__item").each(function () {
     duration: "1000"
   }).setTween(tl3).addTo(controller);
   var scene4 = new ScrollMagic.Scene({
-    triggerElement: '#intro'
+    triggerElement: '#review'
   }).setTween(tl4).addIndicators().addTo(controller);
 });
-$('.review__slider').slick({
-  dots: true,
-  arrow: true,
+$(".review__slider").slick((_$$slick = {
+  dots: false,
+  arrow: false,
   slidesToShow: 1,
   slidesToScroll: 1,
   fade: true,
-  cssEase: 'linear',
-  infinite: true
-}); // Hover animation
+  infinite: true,
+  autoplaySpeed: 3500,
+  autoplay: true
+}, _defineProperty(_$$slick, "infinite", true), _defineProperty(_$$slick, "cssEase", "cubic-bezier(0.7, 0, 0.3, 1)"), _defineProperty(_$$slick, "touchThreshold", 100), _$$slick)); // Hover animation
 
 $('.gallery__link').mouseenter(function (e) {
   var parentOffset = $(this).offset();
@@ -339,7 +344,7 @@ var hoverMouse = function hoverMouse($el) {
 
 hoverMouse($('.gallery__link-wrap')); // Rotate hover
 
-var cardWrap = document.getElementsByClassName('intro__img');
+var cardWrap = document.getElementsByClassName('instagram__item');
 document.body.addEventListener('mousemove', cursorPositionHandler);
 
 function cursorPositionHandler(e) {

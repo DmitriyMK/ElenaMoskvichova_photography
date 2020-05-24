@@ -1,0 +1,42 @@
+@import "../helpers/_vars";
+
+@import "../helpers/_mixins";
+
+
+.services {
+	padding-bottom: 15vh;
+
+	.wrapper {
+		max-width: 1200px;
+	}
+
+	&__box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 60px 0;
+	}
+
+	&__text {
+		font-size: rem(20);
+		line-height: 1.65;
+	}
+
+	&__list {
+		margin-left: 120px;
+
+	}
+
+	&__item {
+		margin-bottom: 20px;
+	}
+
+	&__img {
+		max-width: 40%;
+	}
+
+	.icon-photographer {
+		min-height: 330px;
+	}
+}
+

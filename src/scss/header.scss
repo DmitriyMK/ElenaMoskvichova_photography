@@ -12,36 +12,28 @@
 @import "./base/_layout";
 
 
+// Generated SVG Sprite
+@import "./generated/sprite-svg";
+
+
 // COMPONENTS
-// @import "./components/_burger";
-// @import "./components/_menuMobile";
 @import "./components/_scrollUp";
 // @import "./components/_video";
 // @import "./components/_cursor";
 
-// PLUGINS
-// @import "./plugins/_remodal";
-// @import "./plugins/_slick";
-// @import "./plugins/_fancybox";
-// @import "./plugins/_remodal-customize";
-// @import "./plugins/_slick-customize";
 
-// Generated SVG Sprite
-@import "./generated/sprite-svg";
 
 // HACKS
 @import "./helpers/_hacks";
 
 .header {
+	height: 100vh;
+	max-height: 1000px;
 	margin-bottom: 80px;
 
 	&__top {
-		position: fixed;
-		z-index: 999;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 36px;
+		position: relative;
+		z-index: 10;
 
 		.box {
 			display: flex;
@@ -57,6 +49,7 @@
 
 	&__logo {
 		display: flex;
+		flex-grow: 1;
 		align-items: center;
 
 		svg {
@@ -70,30 +63,15 @@
 		}
 	}
 
-	&__smm {
-		display: flex;
-		justify-content: space-between;
-		max-width: 250px;
-
-		li {
-			margin-right: 8px;
-		}
-
-		svg {
-			width: 50px;
-			height: 50px;
-		}
-	}
-
 	&__box {
 		position: relative;
-
+		margin: 200px auto 0 auto;
 	}
 
 	&__hero {
 		display: block;
 		position: absolute;
-		top: 0;
+		top: -10px;
 		right: 0;
 		width: 1440px;
 		height: 324px;
@@ -101,7 +79,7 @@
 
 	&__illustration {
 		position: absolute;
-		top: 220px;
+		top: -60px;
 		right: 0;
 		will-change: transform;
 	}
@@ -113,7 +91,6 @@
 		justify-content: center;
 		width: 100%;
 		max-width: 1200px;
-		height: 900px;
 		margin: auto;
 	}
 
@@ -139,6 +116,46 @@
 		img {
 			width: 100%;
 		}
+	}
+}
+
+.nav {
+
+	&__list {
+		display: flex;
+		margin-right: 30px;
+	}
+
+	&__item {
+		margin-right: 15px;
+	}
+
+	&__link {
+		color: inherit;
+		text-decoration: none;
+
+		@include hover-underline("slide", "center");
+	}
+}
+
+.smm {
+	display: flex;
+	justify-content: space-between;
+	max-width: 250px;
+
+	li {
+		margin-right: 8px;
+		filter: grayscale(100%)  ;
+		transition: filter $transition-standart;
+
+		&:hover {
+			filter: none;
+		}
+	}
+
+	svg {
+		width: 50px;
+		height: 50px;
 	}
 }
 

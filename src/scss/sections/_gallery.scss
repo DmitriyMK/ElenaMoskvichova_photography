@@ -3,12 +3,23 @@
 @import "../helpers/_mixins";
 
 .gallery {
+	margin-bottom: 120px;
+
+	&__box {
+		padding-top: 40px;
+		padding-bottom: 120px;
+	}
+
 
 	&__item {
 		display: flex;
 		position: relative;
 		margin-bottom: 220px;
 		counter-increment: article;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 
 		&:after {
 			content: counter(article, decimal-leading-zero);

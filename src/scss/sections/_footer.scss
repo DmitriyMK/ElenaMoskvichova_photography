@@ -1,0 +1,25 @@
+@import "../helpers/_vars";
+
+@import "../helpers/_mixins";
+
+.footer {
+	background: #000;
+
+	&__box {
+		display: flex;
+		justify-content: space-between;
+
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 30px 15px;
+	}
+
+	strong {
+		display: block;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+}
