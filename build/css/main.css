@@ -624,6 +624,7 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .instagram__item {

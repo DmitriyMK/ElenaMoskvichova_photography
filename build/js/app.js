@@ -243,7 +243,15 @@ $(".review__slider").slick((_$$slick = {
   infinite: true,
   autoplaySpeed: 3500,
   autoplay: true
-}, _defineProperty(_$$slick, "infinite", true), _defineProperty(_$$slick, "cssEase", "cubic-bezier(0.7, 0, 0.3, 1)"), _defineProperty(_$$slick, "touchThreshold", 100), _$$slick)); // Hover animation
+}, _defineProperty(_$$slick, "infinite", true), _defineProperty(_$$slick, "cssEase", "cubic-bezier(0.7, 0, 0.3, 1)"), _defineProperty(_$$slick, "touchThreshold", 100), _$$slick));
+$('.scrolling__link').on('click', function (event) {
+  event.preventDefault();
+  var id = $(this).attr('href'),
+      top = $(id).offset().top;
+  $('body,html').animate({
+    scrollTop: top
+  }, 1000);
+}); // Hover animation
 
 $('.gallery__link').mouseenter(function (e) {
   var parentOffset = $(this).offset();

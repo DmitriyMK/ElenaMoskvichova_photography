@@ -169,3 +169,14 @@ $(".review__slider").slick({
   cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
   touchThreshold: 100,
 });
+
+$('.scrolling__link').on('click', function(event) {
+  event.preventDefault();
+  var id = $(this).attr('href'),
+
+    top = $(id).offset().top;
+
+  $('body,html').animate({
+    scrollTop: top
+  }, 1000);
+});
